@@ -1,16 +1,25 @@
-const message = document.querySelector('.message')
-
-let visitorCount = localStorage.getItem('visitorCount');
- 
-    if (visitorCount === null) {
-      // If visitor count does not exist, initialize it to 1
-      visitorCount = 1;
-      localStorage.setItem('visitorCount', visitorCount);
-    } else {
-      // If visitor count exists, increment it by 1
-      visitorCount = parseInt(visitorCount) + 1;
-      localStorage.setItem('visitorCount', visitorCount);
-    }
- 
-    // Display the visitor count on the webpage
-    message.textContent = `Total Visitors: ${visitorCount}`;
+function incrementVisitorCount() {
+        if (localStorage.getItem('visitorCount')) {
+          const count = parseInt(localStorage.getItem('visitorCount'));
+          localStorage.setItem('visitorCount', count + 1);
+        } else {
+          localStorage.setItem('visitorCount', 1);
+        }
+      }
+  
+      function displayVisitorCount() {
+        const count = localStorage.getItem('visitorCount');
+        const countElement = document.getElementById('visitorCount');
+        countElement.textContent = `Total Visitors: ${count}`;
+      }
+  
+      incrementVisitorCount();
+  
+      window.addEventListener('DOMContentLoaded', () => {
+        displayVisitorCount();
+      });
+    </script>
+  <body>
+    <h1>Welcome to My Website</h1>
+    <p id="visitorCount">Total Visitors: 0</p>
+  </body>
