@@ -13,17 +13,48 @@
 // console.log(capital_letter(str));
 
 // PART B
-function out() {
-    var e = document.getElementById('out');
-    e.style.display = 'none';
-}
-function hov() {
-    let e = document.getElementById('hover');
-    e.style.display='none'
-}
-function myFunction() {
-    document.getElementById("demo").style.color = "yellow";
-}
-function clickHandler() {
-    alert('Hi there!');
-}
+<body>
+  <button id="myButton">Click Me</button>
+  <div id="myElement">Hover over me</div>
+  <input type="text" id="myInput" placeholder="Type something">
+
+  <script>
+    // onClick event handler
+    function handleClick() {
+      console.log("Button clicked!");
+    }
+
+    // onMouseOver event handler
+    function handleMouseOver() {
+      console.log("Mouse over the element!");
+    }
+
+    // onMouseOut event handler
+    function handleMouseOut() {
+      console.log("Mouse out of the element!");
+    }
+
+ // onChange event handler
+    function handleChange(event) {
+      const value = event.target.value;
+      console.log("Input value changed:", value);
+    }
+
+    // onKeyDown event handler
+    function handleKeyDown(event) {
+      const key = event.key;
+      console.log("Key pressed:", key);
+    }
+
+    // Adding event listeners to elements
+    const button = document.getElementById("myButton");
+    const element = document.getElementById("myElement");
+    const input = document.getElementById("myInput");
+
+    button.addEventListener("click", handleClick);
+    element.addEventListener("mouseover", handleMouseOver);
+    element.addEventListener("mouseout", handleMouseOut);
+    input.addEventListener("change", handleChange);
+    input.addEventListener("keydown", handleKeyDown);
+  </script>
+</body>
