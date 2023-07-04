@@ -13,8 +13,18 @@
 // alert('Vowels = ' + count(s));
 
 // PART B
-let s = prompt('Enter a string')
-function arrange(s){
-    return s.split('').sort().join('')
-}
-console.log(arrange(s));
+<label for="inputString">Enter a string:</label>
+<input type="text" id="inputString">
+<button id="sortBtn">Sort Alphabetically</button>
+<p id="output"></p>
+<script>
+// Get the input string and sort it alphabetically on button click
+document.getElementById("sortBtn").addEventListener("click",
+function() {
+const
+inputString
+=
+document.getElementById("inputString").value;
+const sortedString = inputString.split("").sort().join("");
+document.getElementById("output").textContent = "Sortedstring: " + sortedString;
+});
